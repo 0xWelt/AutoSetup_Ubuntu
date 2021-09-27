@@ -1,3 +1,5 @@
+FILE=$(readlink -f "$(dirname "$0")")
+
 sudo apt remove -y zsh || ture
 rm -rf ~/.oh-my-zsh || ture
 rm -rf ~/.zshrc || ture
@@ -308,9 +310,8 @@ EOF
   git clone https://gitee.com/FHSY/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
 
   # 先拷贝配置文件，后运行zsh
-  curPath=$(readlink -f "$(dirname "$0")")
-  cp $curPath/.zshrc ~/.zshrc &&
-  cp $curPath/.p10k.zsh ~/.p10k.zsh &&
+  cp $FILE/.zshrc ~/.zshrc &&
+  cp $FILE/.p10k.zsh ~/.p10k.zsh &&
 
   printf %s "$GREEN"
   cat <<'EOF'
@@ -338,7 +339,7 @@ EOF
     exit
   fi
 
-  exec zsh -l
+  # exec zsh -l # TODO:后面还要装别的，移到主函数里面安装
 }
 
 main "$@"
