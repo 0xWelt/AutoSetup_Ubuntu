@@ -1,8 +1,8 @@
 FILE=$(readlink -f "$(dirname "$0")")
 
-sudo apt remove -y zsh || ture
-rm -rf ~/.oh-my-zsh || ture
-sudo apt install --upgrade -y zsh &&
+sudo apt remove -y zsh
+sudo rm -rf ~/.oh-my-zsh
+sudo apt install --upgrade -y zsh
 
 
 #!/bin/sh
@@ -111,7 +111,7 @@ setup_ohmyzsh() {
   }
 
   ostype=$(uname)
-  if [ -z "${ostype%CYGWIN*}" ] && git --version | grep -q msysgit; then
+  if [ -z "${ostype%CYGWIN*}" ]  git --version | grep -q msysgit; then
     fmt_error "Windows/MSYS Git is not supported on Cygwin"
     fmt_error "Make sure the Cygwin git package is installed and is first on the \$PATH"
     exit 1
@@ -304,13 +304,13 @@ EOF
   setup_shell
 
   # 安装主题、插件
-  git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k &&
-  git clone https://gitee.com/jklash1996/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &&
-  git clone https://gitee.com/FHSY/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
+  git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k 
+  git clone https://gitee.com/jklash1996/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
+  git clone https://gitee.com/FHSY/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 
 
   # 先拷贝配置文件，后运行zsh
-  \cp -rf $FILE/.zshrc ~/.zshrc &&
-  \cp -rf $FILE/.p10k.zsh ~/.p10k.zsh &&
+  \cp -rf $FILE/.zshrc ~/.zshrc 
+  \cp -rf $FILE/.p10k.zsh ~/.p10k.zsh 
 
   printf %s "$GREEN"
   cat <<'EOF'
