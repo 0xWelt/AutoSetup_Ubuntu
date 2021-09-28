@@ -36,7 +36,7 @@
   git clone https://github.com/Nickydusk/AutoSetup_Ubuntu.git
   cd AutoSetup_Ubuntu
   ```
-
+- 如果国内网速较慢的话可以将上方github连接换成gitee连接：https://gitee.com/Nickydusk/AutoSetup_Ubuntu.git
 - 一键配置所有环境，如果您的用户没有设为免密可能需要输入一次密码
 
   ```shell
