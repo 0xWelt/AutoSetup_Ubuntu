@@ -1,8 +1,3 @@
-# 建立所需文件结构
-if [ ! -d "tmp" ]; then
-    mkdir "tmp"
-fi
-
 # 执行各安装脚本
 apt/set_apt.sh
 oh-my-zsh/ohmyzsh_install.sh
