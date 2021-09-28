@@ -2,7 +2,6 @@ FILE=$(readlink -f "$(dirname "$0")")
 
 sudo apt remove -y zsh || ture
 rm -rf ~/.oh-my-zsh || ture
-rm -rf ~/.zshrc || ture
 sudo apt install --upgrade -y zsh &&
 
 
@@ -244,7 +243,7 @@ EOF
   fi
 
   # Actually change the default shell to zsh
-  if ! chsh -s "$zsh"; then
+  if ! sudo chsh -s "$zsh"; then
     fmt_error "chsh command unsuccessful. Change your default shell manually."
   else
     export SHELL="$zsh"
@@ -310,8 +309,8 @@ EOF
   git clone https://gitee.com/FHSY/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions &&
 
   # 先拷贝配置文件，后运行zsh
-  cp $FILE/.zshrc ~/.zshrc &&
-  cp $FILE/.p10k.zsh ~/.p10k.zsh &&
+  \cp -rf $FILE/.zshrc ~/.zshrc &&
+  \cp -rf $FILE/.p10k.zsh ~/.p10k.zsh &&
 
   printf %s "$GREEN"
   cat <<'EOF'
