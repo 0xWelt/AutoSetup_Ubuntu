@@ -1,7 +1,11 @@
 FILE=$(readlink -f "$(dirname "$0")")
+if [ ! -d "$FILE/../tmp" ]; then
+    mkdir "$FILE/../tmp"
+fi
 
 sudo apt remove -y zsh
 sudo rm -rf ~/.oh-my-zsh
+sudo rm -rf ~/.zsh*
 sudo apt install --upgrade -y zsh
 
 

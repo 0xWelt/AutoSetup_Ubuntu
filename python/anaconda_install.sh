@@ -10,7 +10,8 @@ sh $FILE/../tmp/Anaconda3-2021.05-Linux-x86_64.sh -b -p
 
 # 进行anaconda初始化
 user=$(whoami)
-shell=${$(grep $user /etc/passwd)##*/}
+shell=$(grep $user /etc/passwd)
+shell=${shell##*/}
 ~/anaconda3/bin/conda init $shell  # 即使已经装过，也再进行一次init
 
 
