@@ -1,5 +1,6 @@
 # AutoSetup_Ubuntu
 > Auto setup basic develop enviconment and utilities on ubuntu>=12.04
+> 
 > 本项目服务于CLI环境且只在CLI环境下做过测试，在GUI中使用可能存在未知问题，欢迎写issue~
 
 
