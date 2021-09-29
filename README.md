@@ -19,12 +19,13 @@
 
   - **apt**：切换为对应Ubuntu发行版的[清华源](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/)，自动更新现有包，并安装基础工具。
   - **oh-my-zsh**：自动安装zsh、[oh-my-zsh](https://ohmyz.sh/)及常用插件、[powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)主题，并修改配置文件。全部走gitee资源下载，减少github网络不畅导致的下载安装问题。
-  - **python**：在用户目录下安装anaconda，并切换[anaconda](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)与[pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)为对应的清华源。
+  - **python**：在用户目录下安装anaconda，并切换[anaconda](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)与[pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)为对应的清华源。如果系统中已经安装了Anaconda，则第一步安装会跳过，仅进行换源。
+  - **nvidia-driver**：安装PPA源的系统推荐英伟达显卡驱动（版本可能并非最新，如果想要使用最新驱动请自行修改install.sh以跳过这部分，并手动前往[官网](https://www.nvidia.cn/Download/index.aspx?lang=cn)下载安装）
 
   - 其他
-    - 安装可爱的`cowsay`工具作为提示信息输出
+    - 安装可爱的`cowsay`工具，作为提示信息输出
     - 安装`sl`命令，缓解`ls`命令输反之后的尴尬
-    - 安装`cmatrix`命令，命令行也能黑客帝国
+    - 安装`cmatrix`命令，黑客帝国一件体验
 
 
 
