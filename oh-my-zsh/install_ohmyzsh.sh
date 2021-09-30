@@ -1,13 +1,12 @@
 FILE=$(readlink -f "$(dirname "$0")")
 if [ ! -d "$FILE/../tmp" ]; then
-    mkdir "$FILE/../tmp"
+  mkdir "$FILE/../tmp"
 fi
 
 sudo apt remove -y zsh
 sudo rm -rf ~/.oh-my-zsh
 sudo rm -rf ~/.zsh*
 sudo apt install --upgrade -y zsh
-
 
 #!/bin/sh
 #
@@ -62,7 +61,6 @@ CHSH=${CHSH:-yes}
 RUNZSH=${RUNZSH:-yes}
 KEEP_ZSHRC=${KEEP_ZSHRC:-no}
 
-
 command_exists() {
   command -v "$@" >/dev/null 2>&1
 }
@@ -115,7 +113,7 @@ setup_ohmyzsh() {
   }
 
   ostype=$(uname)
-  if [ -z "${ostype%CYGWIN*}" ]  git --version | grep -q msysgit; then
+  if [ -z "${ostype%CYGWIN*}" ] git --version | grep -q msysgit; then
     fmt_error "Windows/MSYS Git is not supported on Cygwin"
     fmt_error "Make sure the Cygwin git package is installed and is first on the \$PATH"
     exit 1
@@ -169,7 +167,7 @@ setup_zshrc() {
 
   sed "/^export ZSH=/ c\\
 export ZSH=\"$ZSH\"
-" "$ZSH/templates/zshrc.zsh-template" > ~/.zshrc-omztemp
+" "$ZSH/templates/zshrc.zsh-template" >~/.zshrc-omztemp
   mv -f ~/.zshrc-omztemp ~/.zshrc
 
   echo
@@ -200,20 +198,29 @@ EOF
   # Prompt for user choice on changing the default login shell
   printf '%sDo you want to change your default shell to zsh? [Y/n]%s ' \
     "$YELLOW" "$RESET"
-  
+
   # read -r opt # TODO:不用选择了，直接确认
   opt="Y"
 
   case $opt in
-    y*|Y*|"") echo "Changing the shell..." ;;
-    n*|N*) echo "Shell change skipped."; return ;;
-    *) echo "Invalid choice. Shell change skipped."; return ;;
+  y* | Y* | "") echo "Changing the shell..." ;;
+  n* | N*)
+    echo "Shell change skipped."
+    return
+    ;;
+  *)
+    echo "Invalid choice. Shell change skipped."
+    return
+    ;;
   esac
 
   # Check if we're running on Termux
   case "$PREFIX" in
-    *com.termux*) termux=true; zsh=zsh ;;
-    *) termux=false ;;
+  *com.termux*)
+    termux=true
+    zsh=zsh
+    ;;
+  *) termux=false ;;
   esac
 
   if [ "$termux" != true ]; then
@@ -241,9 +248,9 @@ EOF
 
   # We're going to change the default shell, so back up the current one
   if [ -n "$SHELL" ]; then
-    echo "$SHELL" > ~/.shell.pre-oh-my-zsh
+    echo "$SHELL" >~/.shell.pre-oh-my-zsh
   else
-    grep "^$USERNAME:" /etc/passwd | awk -F: '{print $7}' > ~/.shell.pre-oh-my-zsh
+    grep "^$USERNAME:" /etc/passwd | awk -F: '{print $7}' >~/.shell.pre-oh-my-zsh
   fi
 
   # Actually change the default shell to zsh
@@ -267,9 +274,12 @@ main() {
   # Parse arguments
   while [ $# -gt 0 ]; do
     case $1 in
-      --unattended) RUNZSH=no; CHSH=no ;;
-      --skip-chsh) CHSH=no ;;
-      --keep-zshrc) KEEP_ZSHRC=yes ;;
+    --unattended)
+      RUNZSH=no
+      CHSH=no
+      ;;
+    --skip-chsh) CHSH=no ;;
+    --keep-zshrc) KEEP_ZSHRC=yes ;;
     esac
     shift
   done
@@ -308,13 +318,13 @@ EOF
   setup_shell
 
   # 安装主题、插件
-  git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k 
-  git clone https://gitee.com/jklash1996/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
-  git clone https://gitee.com/FHSY/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 
+  git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+  git clone https://gitee.com/jklash1996/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  git clone https://gitee.com/FHSY/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
   # 先拷贝配置文件，后运行zsh
-  \cp -rf $FILE/.zshrc ~/.zshrc 
-  \cp -rf $FILE/.p10k.zsh ~/.p10k.zsh 
+  \cp -rf $FILE/.zshrc ~/.zshrc
+  \cp -rf $FILE/.p10k.zsh ~/.p10k.zsh
 
   printf %s "$GREEN"
   cat <<'EOF'
