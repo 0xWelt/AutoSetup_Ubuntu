@@ -9,7 +9,6 @@ if ubuntu-drivers devices | grep "NVIDIA Corporatio"; then
     sudo apt-get purge -y "*cublas*" "cuda*" "*nvidia*"
     sudo apt autoremove -y
 
-<<<<<<< HEAD
         # 关闭所有当前依赖进程
         sudo rmmod nvidia_uvm
         sudo rmmod nvidia_drm
@@ -32,29 +31,6 @@ if ubuntu-drivers devices | grep "NVIDIA Corporatio"; then
         nvidia-smi
         echo "Nvidia-Driver Already Installed!"
     fi
-=======
-    # 安装最新驱动
-    sudo ubuntu-drivers autoinstall
-
-    # 关闭所有当前依赖进程
-    sudo rmmod nvidia_uvm
-    sudo rmmod nvidia_modeset
-    while sudo lsof -n -w /dev/nvidia* | grep "COMMAND" >/dev/null; do
-      proc=$(sudo lsof -n -w /dev/nvidia* | grep -v "COMMAND" | head -n 1)
-      proc=${proc#*" "}
-      proc=${proc%%" "*}
-      sudo kill $proc
-    done
-    sudo rmmod nvidia
-
-    # 重新装在nvidia驱动
-    nvidia-smi
-    echo "Nvidia-Driver Installed Successfully!"
-  else
-    nvidia-smi
-    echo "Nvidia-Driver Already Installed!"
-  fi
->>>>>>> ab88c21e43236aee4f7b8f62818ebf604a6014b5
 else
   echo "No Nvidia Device, Skip!"
 fi
