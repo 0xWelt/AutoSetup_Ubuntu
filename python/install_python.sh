@@ -4,7 +4,7 @@ if [ ! -d "$FILE/../tmp" ]; then
 fi
 
 # 下载安装anaconda
-wget -c -P $FILE/../tmp/ https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
+wget -c -P $FILE/../tmp/ https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
 sh $FILE/../tmp/Anaconda3-2021.05-Linux-x86_64.sh -b -p
 
 # 进行anaconda初始化
