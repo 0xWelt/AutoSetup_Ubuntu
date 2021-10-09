@@ -3,6 +3,8 @@ if [ ! -d "$FILE/../tmp" ]; then
   mkdir "$FILE/../tmp"
 fi
 
+USERNAME=$(whoami)
+
 sudo apt remove -y zsh
 sudo rm -rf ~/.oh-my-zsh
 sudo rm -rf ~/.zsh*
@@ -254,7 +256,7 @@ EOF
   fi
 
   # Actually change the default shell to zsh
-  if ! sudo chsh -s "$zsh"; then
+  if ! sudo chsh -s "$zsh" $USERNAME; then
     fmt_error "chsh command unsuccessful. Change your default shell manually."
   else
     export SHELL="$zsh"
