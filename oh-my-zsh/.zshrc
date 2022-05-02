@@ -114,5 +114,5 @@ source $ZSH/oh-my-zsh.sh
 alias au="sudo apt update; sudo apt dist-upgrade -y; sudo apt autoremove -y"
 alias sr="screen -R"
 alias sls="screen -ls"
-alias rm="trasn-put"
+alias rm="trash-put"
 alias rl="trash-list"
