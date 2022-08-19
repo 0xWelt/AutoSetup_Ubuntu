@@ -5,10 +5,10 @@ fi
 
 USERNAME=$(whoami)
 
-sudo apt remove -y zsh
-sudo rm -rf ~/.oh-my-zsh
-sudo rm -rf ~/.zsh*
-sudo apt install --upgrade -y zsh
+# sudo apt remove -y zsh
+rm -rf ~/.oh-my-zsh
+rm -rf ~/.zsh*
+# sudo apt install --upgrade -y zsh
 
 #!/bin/sh
 #
