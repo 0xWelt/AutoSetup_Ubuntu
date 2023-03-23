@@ -4,8 +4,8 @@ if [ ! -d "$FILE/../tmp" ]; then
 fi
 
 # 下载安装anaconda
-wget -c -P $FILE/../tmp/ https://mirror.nju.edu.cn/anaconda/archive/Anaconda3-2021.05-Linux-x86_64.sh
-sh $FILE/../tmp/Anaconda3-2021.05-Linux-x86_64.sh -b -p
+wget -c -P $FILE/../tmp/ https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
+sh $FILE/../tmp/Anaconda3-2023.03-Linux-x86_64.sh -b
 
 # 进行anaconda初始化
 user=$(whoami)
@@ -35,7 +35,6 @@ custom_channels:
   pytorch: https://mirror.nju.edu.cn/anaconda/cloud
   simpleitk: https://mirror.nju.edu.cn/anaconda/cloud
 EOF
-conda clean -i # 清空旧的缓存
 
 # 更改pip为南大源
 if [ ! -d "~/.config/pip/pip.conf" ]; then
