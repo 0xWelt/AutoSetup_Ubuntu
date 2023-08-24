@@ -315,13 +315,15 @@ EOF
     exit 1
   fi
 
+  # 安装zsh
   setup_ohmyzsh
   setup_zshrc
-  setup_shell
+  # 改变默认shell为zsh
+  # setup_shell 
 
   # 安装主题、插件
   git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-  git clone https://gitee.com/jklash1996/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
   # 先拷贝配置文件，后运行zsh
