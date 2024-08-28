@@ -30,4 +30,4 @@ fi
 
 # 更新系统内的包，并安装所需的基础包
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-sudo apt install -y --upgrade git screen wget cowsay cmatrix sl vim trash-cli zsh
+sudo apt install -y --upgrade language-pack-en zsh tmux git vim htop trash-cli wget cowsay net-tools git-lfs aria2
