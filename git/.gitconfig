@@ -1,2 +1,7 @@
+[user]
+	email = dinghao12601@126.com
+	name = Nickydusk
 [credential]
 	helper=store
+[fetch]
+	recurseSubmodules = true
