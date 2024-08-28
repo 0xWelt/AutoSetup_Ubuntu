@@ -2,9 +2,7 @@
 bash apt/set_apt.sh
 bash git/git_setting.sh
 bash oh-my-zsh/install_ohmyzsh.sh
-pushd ./tmux
-    bash tmux/install_tmux.sh
-popd
+bash tmux/install_tmux.sh
 bash python/install_python.sh # 如果已经安装过anaconda则不会进行任何修改
 # nvidia-driver/install_nvidia.sh
 
