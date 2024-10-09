@@ -103,12 +103,12 @@
     per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
     # swap                  # used swap
-    # load                    # CPU load
-    ram                     # free RAM
-    disk_usage              # disk usage
-    battery                 # internal battery
-    # context                 # user@hostname
+    # load                  # CPU load
+    # disk_usage            # disk usage
+    # battery               # internal battery
+    # context               # user@hostname
     cpu_temp                # cpu temperature
+    ram                     # free RAM
     time                    # current time
     # # =========================[ Line #2 ]=========================
     # newline
@@ -856,8 +856,8 @@
 
   ######################################[ ram: free RAM ]#######################################
   # RAM color.
-  typeset -g POWERLEVEL9K_RAM_FOREGROUND=0
-  typeset -g POWERLEVEL9K_RAM_BACKGROUND=3
+  typeset -g POWERLEVEL9K_RAM_FOREGROUND=3
+  typeset -g POWERLEVEL9K_RAM_BACKGROUND=8
   # Custom icon.
   # typeset -g POWERLEVEL9K_RAM_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
