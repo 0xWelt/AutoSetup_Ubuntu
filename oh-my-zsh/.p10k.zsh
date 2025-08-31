@@ -1781,10 +1781,10 @@
   }
 
   # ================== my custom prompt segments ==================
-  function prompt_cpu_temp() {
-    integer cpu_temp="$(</sys/class/thermal/thermal_zone0/temp) / 1000"
-    p10k segment -f green  -t "${cpu_temp}"$'\uE339' -i $'\uE350'
-  }
+  # function prompt_cpu_temp() {
+  #   integer cpu_temp="$(</sys/class/thermal/thermal_zone0/temp) / 1000"
+  #   p10k segment -f green  -t "${cpu_temp}"$'\uE339' -i $'\uE350'
+  # }
   # ===============================================================
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
