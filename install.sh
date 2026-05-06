@@ -7,4 +7,4 @@ bash python/install_python.sh # 安装 uv
 bash node/install_node.sh # 安装 Node.js (fnm + Node 24 + PM2)
 # nvidia-driver/install_nvidia.sh
 
-cowsay "All Installation Success!"
+cowsay "All Installation Success!" 2>/dev/null || echo "All Installation Success!"
