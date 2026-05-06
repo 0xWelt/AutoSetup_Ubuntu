@@ -16,9 +16,9 @@
 
 - 自动配置内容
 
-  - **apt**：切换为对应 Ubuntu 发行版的[清华源](https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/)，自动更新现有包，并安装基础工具。
-  - **oh-my-zsh**：自动安装 zsh、[oh-my-zsh](https://ohmyz.sh/)及常用插件、[powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)主题，并修改配置文件。全部走 gitee 资源下载，减少 github 网络不畅导致的下载安装问题。
-  - **python**：在用户目录下安装 anaconda，并切换[anaconda](https://mirror.tuna.tsinghua.edu.cn/help/anaconda/)与[pip](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)为对应的清华源。如果系统中已经安装了 Anaconda，则第一步安装会跳过，仅进行换源。
+  - **apt**：自动更新现有包，并安装基础工具。
+  - **oh-my-zsh**：自动安装 zsh、[oh-my-zsh](https://ohmyz.sh/)及常用插件、[powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)主题，并修改配置文件。
+  - **python**：安装 [uv](https://docs.astral.sh/uv/) Python 包管理器。
   - **nvidia-driver**：安装 PPA 源的系统推荐英伟达显卡驱动（版本可能并非最新，如果想要使用最新驱动请自行修改 install.sh 以跳过这部分，并手动前往[官网](https://www.nvidia.cn/Download/index.aspx?lang=cn)下载安装）
 
   - 其他
@@ -35,7 +35,6 @@
   cd AutoSetup_Ubuntu
   ```
 
-- 如果国内网速较慢的话可以将上方 github 链接换成 gitee 链接：https://gitee.com/Nickydusk/AutoSetup_Ubuntu.git
 - 一键配置所有环境，如果您的用户没有设为免密可能需要输入一次密码
 
   ```shell
