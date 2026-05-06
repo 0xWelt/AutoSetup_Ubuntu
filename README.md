@@ -19,6 +19,7 @@
   - **apt**：自动更新现有包，并安装基础工具。
   - **oh-my-zsh**：自动安装 zsh、[oh-my-zsh](https://ohmyz.sh/)及常用插件、[powerlevel10k](https://github.com/romkatv/powerlevel10k#oh-my-zsh)主题，并修改配置文件。
   - **python**：安装 [uv](https://docs.astral.sh/uv/) Python 包管理器。
+  - **node**：安装 [fnm](https://github.com/Schniz/fnm) Node.js 版本管理器、Node.js 24 及 [PM2](https://pm2.io/) 进程管理器。
   - **nvidia-driver**：安装 PPA 源的系统推荐英伟达显卡驱动（版本可能并非最新，如果想要使用最新驱动请自行修改 install.sh 以跳过这部分，并手动前往[官网](https://www.nvidia.cn/Download/index.aspx?lang=cn)下载安装）
 
   - 其他
