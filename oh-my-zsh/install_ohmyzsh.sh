@@ -6,7 +6,13 @@ fi
 USERNAME=$(whoami)
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
-  echo "[oh-my-zsh] 已安装，跳过"
+  echo "[oh-my-zsh] 已安装，更新..."
+  (cd "$HOME/.oh-my-zsh" && git pull)
+  (cd "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" 2>/dev/null && git pull) || true
+  (cd "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" 2>/dev/null && git pull) || true
+  (cd "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" 2>/dev/null && git pull) || true
+  \cp -rf $FILE/.zshrc ~/.zshrc
+  \cp -rf $FILE/.p10k.zsh ~/.p10k.zsh
   exit 0
 fi
 
