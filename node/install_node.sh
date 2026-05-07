@@ -2,7 +2,7 @@
 set -e
 
 # 安装/更新 fnm (Node.js 版本管理)
-curl -o- https://fnm.vercel.app/install | bash
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
 # 加载 fnm 环境（使当前 shell 可用 fnm 命令）
 export PATH="$HOME/.local/share/fnm:$PATH"
