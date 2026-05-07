@@ -5,6 +5,11 @@ fi
 
 USERNAME=$(whoami)
 
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  echo "[oh-my-zsh] 已安装，跳过"
+  exit 0
+fi
+
 # sudo apt remove -y zsh
 rm -rf ~/.oh-my-zsh
 rm -rf ~/.zsh*

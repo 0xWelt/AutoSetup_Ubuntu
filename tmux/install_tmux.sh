@@ -14,7 +14,7 @@ cd "$REPODIR";
 if ! is_app_installed tmux; then
   printf "WARNING: \"tmux\" command is not found. \
 Install it first\n"
-  exit 1
+  exit 0
 fi
 
 if [ ! -e "$HOME/.tmux/plugins/tpm" ]; then
