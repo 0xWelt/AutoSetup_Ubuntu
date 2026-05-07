@@ -330,7 +330,7 @@ EOF
   setup_ohmyzsh
   setup_zshrc
   # 改变默认shell为zsh
-  # setup_shell 
+  setup_shell 
 
   # 安装主题、插件
   git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
