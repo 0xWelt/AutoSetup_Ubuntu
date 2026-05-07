@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 # 执行各安装脚本
 bash apt/set_apt.sh
 bash git/git_setting.sh
